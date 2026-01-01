@@ -1,4 +1,4 @@
-
+/* 
 
 * {
     margin: 0;
@@ -56,3 +56,170 @@ section {
     justify-content: center;
     align-items: center;
 } 
+
+
+
+
+@media (max-width: 1024px) {
+    .navbar {
+      padding: 8px 10px;
+    }
+  
+    .btn {
+      width: 90px;
+      font-size: 0.9rem;
+      margin: 4px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .navbar {
+      flex-wrap: wrap;
+      top: 8px;
+      width: 95%;
+      justify-content: center;
+    }
+  
+    .btn {
+      width: auto;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar {
+      gap: 6px;
+      padding: 6px;
+    }
+  
+    .btn {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      margin: 3px;
+    }
+  }
+   */
+
+
+
+
+
+   
+
+   /* --- Global Reset & Section (Original) --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+section {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 100px; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- Navbar Base Design --- */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  border-radius: 40px; /* Thoda zyada rounded modern lagta hai */
+  backdrop-filter: blur(15px); 
+  background-color: rgba(255, 255, 255, 0.1); /* Halka visible glass effect */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  z-index: 9999; 
+  white-space: nowrap; /* Buttons ko force karega ek line me rehne ke liye laptop par */
+}
+
+.btn {
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 30px;
+  min-width: 90px;
+  border: none;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.6);
+  color: rgb(2, 0, 0);
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.btn:hover {
+  animation: btnShake 0.3s linear;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+@keyframes btnShake {
+  0% {transform: translate(0px,0px);}
+  25% {transform: translate(-2px,2px);}
+  50% {transform: translate(2px,-2px);}
+  75% {transform: translate(-2px,2px);}
+  100% {transform: translate(0px,0px);}
+}
+
+/* --- Responsive Navbar (Improved) --- */
+
+/* Tablets (1024px and below) */
+@media (max-width: 1024px) {
+  .navbar {
+      width: auto;
+      padding: 8px;
+  }
+  .btn {
+      min-width: 80px;
+      font-size: 0.9rem;
+      padding: 8px 12px;
+  }
+}
+
+/* Mobile (768px and below) */
+@media (max-width: 768px) {
+  .navbar {
+      width: 90%; /* Screen ke corners se thoda gap */
+      top: 15px;
+      padding: 5px;
+      overflow-x: auto; /* Agar buttons zyada hon to swipe ho sakein */
+      justify-content: space-evenly;
+  }
+
+  /* Scrollbar chhupane ke liye (optional) */
+  .navbar::-webkit-scrollbar {
+      display: none;
+  }
+
+  .btn {
+      min-width: unset; /* Fixed width hata di */
+      flex: 1; /* Sabhi buttons barabar jagah lenge */
+      margin: 3px;
+      font-size: 0.8rem;
+      padding: 8px 10px;
+  }
+}
+
+/* Small Mobiles (480px and below) */
+@media (max-width: 480px) {
+  .navbar {
+      width: 95%;
+      border-radius: 20px; /* Chhoti screen par kam rounded */
+  }
+  
+  .btn {
+      padding: 7px 8px;
+      font-size: 0.75rem;
+      margin: 2px;
+  }
+}

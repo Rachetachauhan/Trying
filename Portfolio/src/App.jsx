@@ -51,35 +51,35 @@ const App = () => {
     gsap.from(".aboutSection .aboutme",{
       opacity:0,
       y:-30,
-      duration:1,
-      delay:1,
+      duration:0.7,
+      delay:0.6,
       scrollTrigger:{
         trigger:".aboutSection .aboutme",
         scroller:"body",
-        start:"top 70%",
+        start:"top 90%",
         ease:"bounce.out",
       }
     })
     gsap.from(".aboutMeContent p",{
       opacity:0,
       x:30,
-      duration:1,
-      delay:1,
+      duration:0.7,
+      delay:0.6,
       scrollTrigger:{
         trigger:".aboutSection p",
         scroller:"body",
-        start:"top 70%",
+        start:"top 90%",
       }
     })
     gsap.from(".aboutSection a",{
       opacity:0,
       y:-30,
-      duration:1,
-      delay:1,
+      duration:0.7,
+      delay:0.6,
       scrollTrigger:{
         trigger:".aboutSection a",
         scroller:"body",
-        start:"top 70%",
+        start:"top 90%",
       }
     })
     gsap.from(".projects h1",{
@@ -144,7 +144,6 @@ const App = () => {
         scroller:"body",
         start: "top 50%",
         toggleActions: "play none none reverse",
-        markers: true,
       },
     });
 
@@ -160,7 +159,6 @@ const App = () => {
         scroller:"body",
         start: "top 50%",
         toggleActions: "play none none reverse",
-        markers: true,
       },
     });
 
